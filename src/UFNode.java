@@ -26,6 +26,10 @@ public class UFNode {
 	        return this.parent;
 	    }
 	    
+	    public boolean equals(UFNode that){
+	    	return this.id == that.id;
+	    }
+	    
 	    public String toString(){
 	    	StringBuilder sb = new StringBuilder();
 	    	sb.append("["+this.id+"| ");
@@ -56,5 +60,13 @@ public class UFNode {
 	            xRoot.rank++;
 	        }
 
+	    }
+	    
+	    public double calculateEdge(UFNode that){
+	    	double res = 0;
+	    	for (int i = 0; i < coordinates.length; i++) {
+			res += Math.pow(this.coordinates[i] - that.coordinates[i],2);	
+			}
+	    	return Math.sqrt(res);
 	    }
 	}
