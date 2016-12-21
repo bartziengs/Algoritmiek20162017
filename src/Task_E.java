@@ -1,27 +1,23 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.FileReader;
-import java.io.InputStreamReader;
-import java.util.Locale;
-import java.util.Scanner;
+import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class Task_A {
-
+public class Task_E {
+	
 	public static void main(String[] args) {
 		BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader("src/A/Datasets/sample2.in"));
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
-		int k = Integer.parseInt(st.nextToken());
+		double delta = Double.parseDouble(st.nextToken()); 
 		
 		Graph graph = new Graph();
 		
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < 2; i++) {
 			double[] coordinates = new double[m];
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < m; j++) {
