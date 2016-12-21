@@ -6,7 +6,11 @@ import java.io.InputStreamReader;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-
+/**
+ * boodschap
+ * @author Bart Ziengs
+ *
+ */
 public class Task_A {
 
 	public static void main(String[] args) {
