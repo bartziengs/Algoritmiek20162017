@@ -63,10 +63,26 @@ public class UFNode {
 	    }
 	    
 	    public double calculateEdge(UFNode that){
-	    	double res = 0;
-	    	for (int i = 0; i < coordinates.length; i++) {
-			res += Math.pow(this.coordinates[i] - that.coordinates[i],2);	
+	    	int s = this.coordinates.length;
+	    	double[][] vectors = new double[2][s];
+			vectors[0] = this.coordinates;
+			vectors[1] = that.coordinates;
+			double[][] M = new double[s][s];
+			
+			M[0][0] = Math.abs(vectors[0][0] - vectors[1][0]);
+			for (int i = 1; i < s; i++) {
+				M[0][i] = M[0][i-1] + Math.abs(vectors[0][i] - vectors[1][0]);
 			}
-	    	return Math.sqrt(res);
+			for (int i = 1; i < s; i++) {
+				M[i][0] = M[i-1][0] + Math.abs(vectors[1][i] - vectors[0][0]);
+			}
+			
+			for (int i = 1; i < s; i++) {
+				for (int j = 1; j < s; j++) {
+					double dist = Math.abs(vectors[0][j] - vectors[1][i]);
+					M[i][j] = Math.min((M[i-1][j-1] + dist),  Math.min(dist + M[i-1][j], dist +M[i][j-1]));
+					}
+				}
+			return M[s-1][s-1];
 	    }
 	}

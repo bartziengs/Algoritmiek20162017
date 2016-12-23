@@ -14,17 +14,6 @@ public class Graph {
 	public void addNode(UFNode x){
 		this.nodes.add(x);
 	}
-	
-	@Override
-	public String toString(){
-		StringBuilder sb = new StringBuilder();
-		sb.append("Graph: \n");
-		for(UFNode n : nodes){
-			sb.append(n.toString()+"\n");
-		}
-		for(Edge e: edges){
-			sb.append(e.toString());
-		}
-		return sb.toString();
-	}
 }
+
+

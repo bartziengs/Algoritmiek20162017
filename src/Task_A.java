@@ -3,14 +3,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.InputStreamReader;
-import java.util.Locale;
-import java.util.Scanner;
 import java.util.StringTokenizer;
-/**
- * boodschap
- * @author Bart Ziengs
- *
- */
+
 public class Task_A {
 
 	public static void main(String[] args) {
@@ -42,6 +36,7 @@ public class Task_A {
 				}
 		}
 		br.close();
+		System.out.println(graph.toString());
 		double res = 0;
 		int a = 0;
 		while(a < n-k) {
@@ -56,6 +51,7 @@ public class Task_A {
 					
 		}
 		//Double.toString(res);
+		 
 		System.out.println(res);
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
