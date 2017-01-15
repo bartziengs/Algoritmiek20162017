@@ -1,3 +1,4 @@
+package assgnmnt_3;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,7 +11,7 @@ public class Task_A {
 	public static void main(String[] args) {
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new FileReader("src/A/Datasets/sample2.in"));
+			br = new BufferedReader(new FileReader("src/assgnmnt_3/A/Datasets/sample2.in"));
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int n = Integer.parseInt(st.nextToken());
@@ -36,7 +37,6 @@ public class Task_A {
 				}
 		}
 		br.close();
-		System.out.println(graph.toString());
 		double res = 0;
 		int a = 0;
 		while(a < n-k) {

@@ -1,3 +1,4 @@
+package assgnmnt_3;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,7 +11,7 @@ public class Task_H {
 	public static void main(String[] args){
 	BufferedReader br;
 	try {
-	br = new BufferedReader(new FileReader("src/H/Datasets/sample100.in"));
+	br = new BufferedReader(new FileReader("src/assgnmnt_3/H/Datasets/sample.in"));
 	
 	StringTokenizer st = new StringTokenizer(br.readLine());
 	int n = Integer.parseInt(st.nextToken());

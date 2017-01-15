@@ -1,3 +1,4 @@
+package assgnmnt_3;
 
 public class Edge implements Comparable<Edge> {
 	int from;

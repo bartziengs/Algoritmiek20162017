@@ -1,3 +1,4 @@
+package assgnmnt_3;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,7 +11,7 @@ public class Task_E {
 		BufferedReader br;
 		long startTime = System.currentTimeMillis();
 		try {
-			br = new BufferedReader(new FileReader("src/E/Datasets/sample12500.in"));
+			br = new BufferedReader(new FileReader("src/assgnmnt_3/E/Datasets/sample12500.in"));
 		
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			int n = Integer.parseInt(st.nextToken());
@@ -44,7 +45,7 @@ public class Task_E {
 						M[i][j] = Double.MAX_VALUE;
 					}else{
 					double dist = Math.abs(vectors[0][j] - vectors[1][i]);
-					M[i][j] = Math.min((M[i-1][j-1] + dist),  Math.min(dist + M[i-1][j], dist +M[i][j-1]));
+					M[i][j] = dist + Math.min((M[i-1][j-1] ),  Math.min(M[i-1][j], M[i][j-1]));
 					}
 				}
 				

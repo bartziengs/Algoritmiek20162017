@@ -1,3 +1,4 @@
+package assgnmnt_3;
 
 public class UFNode {
 	 int id;
@@ -80,7 +81,7 @@ public class UFNode {
 			for (int i = 1; i < s; i++) {
 				for (int j = 1; j < s; j++) {
 					double dist = Math.abs(vectors[0][j] - vectors[1][i]);
-					M[i][j] = Math.min((M[i-1][j-1] + dist),  Math.min(dist + M[i-1][j], dist +M[i][j-1]));
+					M[i][j] = dist + Math.min((M[i-1][j-1] ),  Math.min(M[i-1][j], M[i][j-1]));
 					}
 				}
 			return M[s-1][s-1];
