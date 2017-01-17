@@ -1,14 +1,7 @@
 package assgnmnt_4;
 
-
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.StringTokenizer;
-import java.io.BufferedReader;
 
 public class Cats_dogs {
 
@@ -51,9 +44,4 @@ public class Cats_dogs {
 			}
 
 }
-
-
-//else if(l<      (d+(     (c>2*d)  ? (c-(2*d)) : 0 )      )*4){
-
-
 
