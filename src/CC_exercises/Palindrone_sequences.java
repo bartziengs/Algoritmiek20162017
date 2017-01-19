@@ -1,0 +1,50 @@
+package CC_exercises;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Stack;
+
+public class Palindrone_sequences {
+	
+	public static void main(String[] args){
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			int n = Integer.parseInt(br.readLine());
+			int[] values = Arrays.asList(br.readLine().split(" ")).stream().mapToInt(Integer::parseInt).toArray();
+			int totalpalin = 0;
+			for (int i = 0; i < n; i++) {
+				for (int j = i+2; j < n+1; j++) {
+					int[] part = Arrays.copyOfRange(values, i, j);
+					if(isPalindrome(part))totalpalin++;
+					}
+			}
+			
+
+			System.out.println(totalpalin);
+			br.close();
+			
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static boolean isPalindrome(int[] values){
+		int n = values.length;
+		Stack<Integer> s = new Stack<Integer>();
+		for (int i = 0; i < n/2.0; i++) {
+			s.push(values[i]);
+		}
+		if(n%2 != 0)s.pop();
+		for (int i = (int)Math.ceil(n/2.0); i <= n-1; i++){
+			if(s.pop() != values[i])return false;
+		}
+		return true;
+	}
+
+}
