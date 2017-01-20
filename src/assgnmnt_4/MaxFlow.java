@@ -49,18 +49,21 @@ public class MaxFlow {
 		Node sink = g.getSink();
 		Node source = g.getSource();
 		List<Edge> path;
-
-		while ((path = findPath(g, source, sink)) != null) {
+		
+				while ((path = findPath(g, source, sink)) != null) {
 
 			int r = Integer.MAX_VALUE;
 			for (Edge e : path) {
 				r = Math.min(r, e.getResidual());
-			}
+				}
 
 			for (Edge e : path) {
 				e.augmentFlow(r);
 			}
+			
+		
 		}
+		
 	}
 
 }

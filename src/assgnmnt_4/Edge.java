@@ -7,7 +7,13 @@ public class Edge {
 	protected Node from;
 	protected Node to;
 	protected Edge backwards;
-
+	
+	
+	@Override
+	public String toString(){
+		return "["+this.from.label+","+this.to.label+"]"; 
+	}
+	
 	private Edge(Edge e) {
 		this.flow = e.getCapacity();
 		this.capacity = e.getCapacity();
