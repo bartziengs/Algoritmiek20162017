@@ -13,8 +13,7 @@ public class Task_6 {
 	public static void main(String a[]){
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new FileReader("src/assgnmnt_4/testcases/example1.in"));
-			//br = new BufferedReader(new FileReader("src/assgnmnt_4/example.in"));
+			br = new BufferedReader(new FileReader("src/assgnmnt_4/testcases/example3.in"));
 			int n = Integer.parseInt(br.readLine());
 			ArrayList<Node> nodes = new ArrayList<Node>(n);
 			int[] st = new int[4];
@@ -26,7 +25,7 @@ public class Task_6 {
 				nodes.add(new Node(i+1 +"", values,n));
 			}
 			
-			nodes.get(0).incrementTotalcalls(1);
+			
 			
 			int m = Integer.parseInt(br.readLine());
 			ArrayDeque<Functioncall> fc = new ArrayDeque<>(m);
@@ -36,14 +35,15 @@ public class Task_6 {
 				fc.add(new Functioncall(values[0], values[1], values[2]));
 				nodes.get(values[1]-1).incrementTotalcalls(values[2]);
 			}
-
+			
 			int overhead = Integer.parseInt(br.readLine());
+			nodes.get(0).incrementTotalcalls(1);
 			
 			for(Node i : nodes){
 				s.addEdge(i, i.getTotalcalls()*i.getCompiled() + i.getCompilation());
 				i.addEdge(t, i.getNotcompiled() * i.getTotalcalls());
-			}
-				
+			}			
+			
 			while(!fc.isEmpty()){
 				Functioncall temp = fc.poll();
 				if(!(nodes.get(temp.getFrom()-1).containsEdge(nodes.get(temp.getTo()-1)))){
@@ -52,13 +52,7 @@ public class Task_6 {
 			}
 			}
 			
-			
-			
-			
-			Graph g = new Graph(nodes, s, t);
-
-			
-			MaxFlow.maximizeFlow(g);
+			MaxFlow.maximizeFlow(new Graph(nodes, s, t));
 			
 			int res = 0;
 			for(Edge e : s.getEdges()){
