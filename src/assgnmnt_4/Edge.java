@@ -11,7 +11,7 @@ public class Edge {
 	
 	@Override
 	public String toString(){
-		return "["+this.from.label+","+this.to.label+"]"; 
+		return "["+this.from.label+","+this.to.label+" | "+this.flow+"]"; 
 	}
 	
 	private Edge(Edge e) {
