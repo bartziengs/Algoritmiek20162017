@@ -11,12 +11,14 @@ public class Node {
 	protected int compilation;
 	protected int totalcalls;
 	protected Collection<Edge> edges;
-
-	public Node(String label, int[] compilation, int n) {
+	protected ArrayList<int[]> callsTo;
+	
+	public Node(String label, int[] compilation) {
 		this.label = label;
 		this.compiled = compilation[0];
 		this.notcompiled = compilation[1];
 		this.compilation = compilation[2];
+		this.callsTo = new ArrayList<>();
 		this.edges = new ArrayList<Edge>();
 	}
 
@@ -34,6 +36,10 @@ public class Node {
 	sb.append("compilation costs: "+this.compilation+"\n");
 	sb.append("total calls: "+this.totalcalls+ "\n");
 	return sb.toString();
+	}
+	
+	public void addCallTo(int[] call){
+		this.callsTo.add(call);
 	}
 
 	
@@ -66,6 +72,10 @@ public class Node {
 	
 	public int getCompiled() {
 		return compiled;
+	}
+	
+	public ArrayList<int[]> getCallsTo() {
+		return callsTo;
 	}
 
 	public int getNotcompiled() {
