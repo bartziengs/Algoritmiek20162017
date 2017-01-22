@@ -13,7 +13,9 @@ public class Task_6 {
 	public static void main(String a[]){
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new FileReader("src/assgnmnt_4/testcases/example1.in"));
+			
+			//br = new BufferedReader(new FileReader("src/assgnmnt_4/testcases/example3.in"));
+			br = new BufferedReader(new FileReader("src/assgnmnt_4/example.in"));
 			
 			int n = Integer.parseInt(br.readLine());
 			ArrayList<Node> nodes = new ArrayList<Node>(n);
@@ -60,6 +62,7 @@ public class Task_6 {
 				res += e.getFlow();
 			}
 			System.out.println(res);
+			
 		} catch (NumberFormatException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
